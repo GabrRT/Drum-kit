@@ -162,10 +162,11 @@ function makeSound(key) {
 function buttonAnimation(currentKey) {
     var activeButton = document.querySelector("." + currentKey);
     if (activeButton) {
-        activeButton.style.color = "blue";
+        activeButton.classList.add("pressed");
         setTimeout(function() {
-            activeButton.style.color = "";
-        }, 100);
+            activeButton.classList.remove("pressed");
+        }, 300);
+          // Duration of the animation effect
     }
 }
 
@@ -174,11 +175,10 @@ for (var i = 0; i < document.querySelectorAll(".drum").length; i++) {
         var buttonInnerHTML = this.innerHTML;
         makeSound(buttonInnerHTML);
         buttonAnimation(buttonInnerHTML);
-       
     });
 }
 
 document.addEventListener("keypress", function(event) {
     makeSound(event.key);
     buttonAnimation(event.key);
-});d
+});
