@@ -165,7 +165,7 @@ function buttonAnimation(currentKey) {
         activeButton.classList.add("pressed");
         setTimeout(function() {
             activeButton.classList.remove("pressed");
-        }, 300);
+        }, 500);
           // Duration of the animation effect
     }
 }
